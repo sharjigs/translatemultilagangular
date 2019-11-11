@@ -49,8 +49,7 @@ getAuthorizationToken(){
 
 logout(){
   localStorage.removeItem('currentUser');
-
-  console.log(this.currentUserSubject.value)
+  this.currentUserSubject.next(null);
 }
 
 private handleError(error:HttpErrorResponse){
