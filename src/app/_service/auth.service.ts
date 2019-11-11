@@ -31,6 +31,7 @@ export class AuthService {
  .pipe(map(user=>{
    if(user&& user.token){
      localStorage.setItem('currentUser',JSON.stringify(user));
+	 this.currentUserSubject.next(user);
    }
  }),
  catchError(this.handleError)
